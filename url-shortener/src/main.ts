@@ -14,7 +14,7 @@ async function bootstrap() {
   
   app.setViewEngine('html');
   app.enableCors({
-    origin: 'http://localhost:5173',
+    origin: '*',
     credentials: true,
   });
   app.setGlobalPrefix('api');
