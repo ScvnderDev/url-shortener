@@ -16,7 +16,7 @@ export class UserService {
     @InjectModel(User.name) private readonly userModel: Model<User>,
   ) {}
   async create(createUserDto: CreateUserDto): Promise<User> {
-    console.log('🍢[createUserDto]:', createUserDto);
+   
     try {
       // Hash password before saving the user
       const hashedPassword = hashPassword(createUserDto.password);

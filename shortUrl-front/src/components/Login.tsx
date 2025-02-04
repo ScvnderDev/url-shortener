@@ -56,14 +56,14 @@ const Login = ({ setState }: SignCardProps) => {
             navigate("/auth");
           }
           const data = await axiosInstance.get("/user/user-info");
-          console.log("🍊[data]:", data.data);
+          
           useAuthStore.getState().setUser(data.data);
           // Navigate to the target page.
           navigate("/");
         },
       });
     } catch (error) {
-      console.log("🧀 [error]:", error);
+      
     }
   };
   return (

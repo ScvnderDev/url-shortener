@@ -8,8 +8,7 @@ const SettingsModal = lazy(() => import("./SettingsModal"));
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const toggleModal = () => setIsModalOpen((prev) => !prev);
-  // const { user } = useAuthStore.getState();
-  // console.log("🍎[user]:", user);
+
 
   return (
     <header

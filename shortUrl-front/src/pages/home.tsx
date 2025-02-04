@@ -35,7 +35,7 @@ const home = () => {
 
       const { expiryDate, shortUrl } = response.data;
       if (!expiryDate && !shortUrl) {
-        console.log("invalid");
+       
       }
 
       setExpiryDate(expiryDate);

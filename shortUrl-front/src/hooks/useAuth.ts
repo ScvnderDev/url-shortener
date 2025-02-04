@@ -1,5 +1,5 @@
 import {
-  QueryClient,
+
   useMutation,
   useQuery,
   useQueryClient,
@@ -12,12 +12,12 @@ export const useRegister = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async (formData: any) => {
-      console.log("🍐[formData]:", formData);
+
       const { data } = await axiosInstance.post("/user", formData);
       return data;
     },
-    onSuccess: async (data) => {
-      console.log("🦑[data]:", data);
+    onSuccess: async () => {
+    
       await queryClient.refetchQueries({ queryKey: ["userRegister"] });
     },
   });
@@ -79,9 +79,9 @@ export const useUser = () => {
   return useQuery({
     queryKey: ["user"],
     queryFn: async () => {
-      console.log("🍪 accessToken:", accessToken);
+    
       const { data } = await axiosInstance.get("/user/user-info");
-      console.log("🥃 user data:", data);
+     
       // Optionally, update your store with the user data.
       useAuthStore.getState().setUser(data);
       return data;

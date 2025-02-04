@@ -37,7 +37,7 @@ const Register = ({ setState }: SignCardProps) => {
   const { mutate: registerUser, isPending } = useRegister();
 
   const onSubmit: SubmitHandler<FormField> = async (data) => {
-    console.log("🥝[data]:", data);
+
     try {
       registerUser(data, {
         onSuccess: async () => {
