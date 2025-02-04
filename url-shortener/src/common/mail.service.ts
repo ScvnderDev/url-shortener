@@ -18,7 +18,7 @@ export class MailService {
 
   async sendResetTokenToResetPassword(to: string, token: string) {
     try {
-      const resetLink = `http://localhost:3000/reset-password?token=${token}`; // client
+      const resetLink = `https://url-shortener-04ga.onrender.com:3000/reset-password?token=${token}`; // client
       const mailOption = {
         from: process.env.MAIL_USER,
         to,

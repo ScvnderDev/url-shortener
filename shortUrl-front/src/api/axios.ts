@@ -1,7 +1,7 @@
 import { useAuthStore } from "@/stores/auth.store";
 import axios from "axios";
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://url-shortener-04ga.onrender.com:3000/api",
   withCredentials: true, // Automatically send cookies
 });
 
