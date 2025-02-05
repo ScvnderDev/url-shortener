@@ -4,17 +4,15 @@ import { UserController } from './user.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { User, UserSchema } from './entities/user.entity';
 import { JwtService } from '@nestjs/jwt';
-import { HealthCheckService, TerminusModule } from '@nestjs/terminus';
-import { HealthCheckExecutor } from '@nestjs/terminus/dist/health-check/health-check-executor.service';
+import {  TerminusModule } from '@nestjs/terminus';
+import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [ TerminusModule.forRoot({
-    errorLogStyle: 'pretty',
-  }),
+  imports: [HttpModule, TerminusModule,
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
   ],
   controllers: [UserController],
-  providers: [UserService, JwtService,HealthCheckService ,HealthCheckExecutor, ],
+  providers: [UserService, JwtService, ],
   exports: [UserService],
 })
 export class UserModule {}
