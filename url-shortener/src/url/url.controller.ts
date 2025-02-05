@@ -13,7 +13,7 @@ import { Response } from 'express';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { ApiBearerAuth, ApiOperation, ApiResponse } from '@nestjs/swagger';
 
-@Controller('url')
+@Controller('api/url')
 export class UrlController {
   constructor(private readonly urlService: UrlService) {}
   @UseGuards(AuthGuard)

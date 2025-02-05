@@ -24,7 +24,7 @@ async function bootstrap() {
     }
   });
   app.setBaseViewsDir(join(__dirname, '..', 'public'));
-  app.setGlobalPrefix('api');
+
   app.setViewEngine('html');
   app.enableCors({
     origin: '*',
