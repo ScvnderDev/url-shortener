@@ -6,14 +6,14 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { AppController } from './app.controller';
-import { TerminusModule } from '@nestjs/terminus';
+
 
 
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
-    TerminusModule,
+   
 
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
