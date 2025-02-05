@@ -11,6 +11,7 @@ async function bootstrap() {
   app.useStaticAssets(join(__dirname, '..', 'public'), {
     index: false, 
   });
+ 
   app.use((req: Request, res: Response, next: NextFunction) => {
     if (
       req.path.startsWith('/api') || // API routes
@@ -23,7 +24,7 @@ async function bootstrap() {
     }
   });
   app.setBaseViewsDir(join(__dirname, '..', 'public'));
-  
+  app.setGlobalPrefix('api');
   app.setViewEngine('html');
   app.enableCors({
     origin: '*',
