@@ -22,7 +22,6 @@ async function bootstrap() {
       // Serve React's index.html for all other routes
       res.sendFile(join(__dirname, '..', 'public', 'index.html'));
       app.setBaseViewsDir(join(__dirname, '..', 'public'));
-
       app.setViewEngine('html');
     }
   });
