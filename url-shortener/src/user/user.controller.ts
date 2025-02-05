@@ -9,7 +9,7 @@ import { HealthCheckService, HttpHealthIndicator, HealthCheck } from '@nestjs/te
 export class UserController {
   constructor(private readonly userService: UserService,private health: HealthCheckService,
       private http: HttpHealthIndicator) {}
-  @Get()
+  @Get("/health")
   @HealthCheck()
   check() {
     return this.health.check([
