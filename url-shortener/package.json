@@ -29,6 +29,7 @@
     "@nestjs/platform-express": "^11.0.7",
     "@nestjs/serve-static": "^5.0.1",
     "@nestjs/swagger": "^11.0.3",
+    "@nestjs/terminus": "^11.0.0",
     "@vercel/node": "^5.1.0",
     "bcrypt": "^5.1.1",
     "class-transformer": "^0.5.1",
