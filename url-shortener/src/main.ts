@@ -21,11 +21,12 @@ async function bootstrap() {
     } else {
       // Serve React's index.html for all other routes
       res.sendFile(join(__dirname, '..', 'public', 'index.html'));
+      app.setBaseViewsDir(join(__dirname, '..', 'public'));
+
+      app.setViewEngine('html');
     }
   });
-  app.setBaseViewsDir(join(__dirname, '..', 'public'));
 
-  app.setViewEngine('html');
   app.enableCors({
     origin: '*',
     credentials: true,
