@@ -1,0 +1,1 @@
+import{u as a,j as t,C as e,a as n,B as r}from"./index-D8c6tcUH.js";const d=()=>{const{mutate:o}=a(),s=()=>{o()};return t.jsx(e,{children:t.jsx(n,{children:t.jsx(r,{onClick:s,children:"Logout"})})})};export{d as default};

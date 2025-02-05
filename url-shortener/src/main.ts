@@ -27,7 +27,7 @@ async function bootstrap() {
   });
 
   app.enableCors({
-    origin: '*',
+    origin: 'https://url-shortener-04ga.onrender.com',
     credentials: true,
   });
 

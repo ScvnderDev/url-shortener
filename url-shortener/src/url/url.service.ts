@@ -30,7 +30,7 @@ export class UrlService {
       }).save();
       if (!url) throw new InternalServerErrorException('Error in creating url');
       return {
-        shortUrl: `${process.env.BASE_URL || 'https://url-shortener-04ga.onrender.com:3000'}/api/url/${url.shortUrl}`,
+        shortUrl: `${process.env.BASE_URL || 'https://url-shortener-04ga.onrender.com'}/api/url/${url.shortUrl}`,
         expiryDate: url.expiryDate,
       };
     } catch (error) {
