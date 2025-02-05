@@ -3,12 +3,22 @@ import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/auth.guard';
+import { HealthCheckService, HttpHealthIndicator, HealthCheck } from '@nestjs/terminus';
 @ApiTags('Users')
-@Controller('api/user')
+@Controller("api")
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(private readonly userService: UserService,private health: HealthCheckService,
+      private http: HttpHealthIndicator) {}
+  @Get()
+  @HealthCheck()
+  check() {
+    return this.health.check([
+      () => this.http.pingCheck('nestjs-docs', 'https://docs.nestjs.com'),
+    ]);
+  }
+  
 
-  @Post()
+  @Post("/user")
   @ApiOperation({ summary: 'Create a new user' }) // Describes the endpoint
   @ApiResponse({ status: 201, description: 'User successfully created' })
   @ApiResponse({ status: 400, description: 'Validation error' })

@@ -6,17 +6,11 @@ import { join } from "path";
 @Controller()
 export class AppController {
   constructor(private health: HealthCheckService,
-    private http: HttpHealthIndicator,){}
+    private http: HttpHealthIndicator){}
   @Get('*')
   serveClient(@Res() res: Response) {
     res.sendFile(join(__dirname, '..', 'public', 'index.html'));
   }
 
-  @Get("/api")
-  @HealthCheck()
-  check() {
-    return this.health.check([
-      () => this.http.pingCheck('nestjs-docs', 'https://docs.nestjs.com'),
-    ]);
-  }
+
 }
